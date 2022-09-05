@@ -1,0 +1,75 @@
+# Teste 1: verificar se valores inputados são salvos
+# Teste 2: valor default declarado: verificar se valores não informados assumem o valor default declarado
+# Teste 3: valor default omitido: verificar se valores não informados assumem o valor da regra de cada input, onde 
+# int = 0, bool será false e listas serão listas vazias
+# Teste 4: verificar se valor int aceita string, bool ou lista
+# Teste 5: verificar se valor bool aceita string, int ou lista
+# Teste 6: verificar se valor string aceita lista
+# Teste 7: verificar se valor lista aceita um lista que nao seja os itens da lista
+
+
+name: template_input_tests
+description: Template used to test inputs
+types:
+  - app-template
+inputs:
+  - label: Project name
+    type: text
+    name: project_name
+    default: project-name
+  - label: Text field
+    type: text
+    name: text_field
+    default: test
+  - label: Boolean field
+    type: bool
+    name: boolean_field
+    default: true
+  - label: Boolean field 2 
+    type: bool
+    name: boolean_field2  
+  - label: Integer field
+    type: int
+    name: integer_field
+    default: 1
+  - label: Integer field 2
+    type: int
+    name: integer_field 
+  - label: Password field
+    type: password
+    name: password_field
+    default: 123
+  - label: Select field # O input select é um input text com items.
+    type: text
+    name: select_field
+    items:
+        - "python"
+        - "java"
+        - "golang"
+        - "javascript"
+    default: "python"   
+  - label: Select field 2
+    type: text
+    name: select_field2
+    items:
+        - "python"
+        - "java"
+        - "golang"
+        - "javascript"
+  - label: Multiselect field
+    type: multiselect
+    name: multiselect_field
+    items:
+      - item1
+      - item2
+      - item3
+      - item4
+    default: [item4]
+  - label: Multiselect field 2
+    type: multiselect
+    name: multiselect_field2
+    items:
+      - item1
+      - item2
+      - item3
+      - item4  

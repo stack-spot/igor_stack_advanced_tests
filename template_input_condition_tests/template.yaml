@@ -1,0 +1,70 @@
+# Teste 1: Informar condition como false e confirmar que não precisa informar nenhum campo
+# Teste 2: Informar condition como true e confirmar que precisa informar todos os campos
+
+name: template_input_condition_tests
+description: Template used to test the condition applied for the inputs
+types:
+  - app-template
+inputs:
+  - label: Project name
+    type: text
+    name: project_name
+    default: project-name
+  - label: Apply condition 1 ? # Used to test conditions
+    type: bool
+    name: condition_1
+    required: true
+  # Contion test for each type of input
+  - label: Text field
+    type: text
+    name: text_field
+    condition:
+      variable: condition_1
+      operator: ==
+      value: true
+  - label: Boolean field
+    type: bool
+    name: boolean_field
+    condition:
+      variable: condition_1
+      operator: ==
+      value: true
+  - label: Integer field
+    type: int
+    name: integer_field
+    condition:
+      variable: condition_1
+      operator: ==
+      value: true
+  - label: Password field
+    type: password
+    name: password_field
+    condition:
+      variable: condition_1
+      operator: ==
+      value: true
+  - label: Select field
+    type: text
+    name: select_field
+    items:
+        - "python"
+        - "java"
+        - "golang"
+        - "javascript"
+    condition:
+      variable: condition_1
+      operator: ==
+      value: true
+  - label: Multiselect field
+    type: multiselect
+    name: multiselect_field
+    items:
+      - item1
+      - item2
+      - item3
+      - item4   
+    condition:
+      variable: condition_1
+      operator: ==
+      value: true      
+  # TODO: test all operators: https://docs.stackspot.com/v4.0.0/docs/creators-guide/yaml-files/inputs/#opcionais      

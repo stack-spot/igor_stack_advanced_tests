@@ -1,0 +1,17 @@
+# Teste 1: informar um valor aceito pela ER e verificar se ele foi inputado
+# Teste 2: informar um valor não aceito pela ER e verificar o bloqueio
+
+name: template_input_pattern_tests
+description: Template used to test the pattern field of the inputs
+types:
+  - app-template
+inputs:
+  - label: Project name
+    type: text
+    name: project_name
+    default: project-name
+  - label: Text field
+    type: text
+    name: text_field
+    pattern: [A-Za-z] # TODO: adicionar outros campos com ER mais complexas
+
