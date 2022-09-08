@@ -34,7 +34,7 @@ inputs:
     default: 1
   - label: Integer field 2
     type: int
-    name: integer_field 
+    name: integer_field2 
   - label: Password field
     type: password
     name: password_field
