@@ -156,7 +156,7 @@ inputs:
       operator: notContainsAny
       value: [item1,item2]
   # Operator containsAll
-  - label: Should appear if field 4 contains all values item1,item2
+  - label: Should appear if field 4 contains all values item1, item2
     type: text
     name: contains_all_operator_test_1
     default: ok
