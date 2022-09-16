@@ -130,6 +130,14 @@ inputs:
       variable: field_4
       operator: containsAny
       value: item1
+  - label: Should appear if field 4 contains any value item1, item2
+    type: text
+    name: contains_any_operator_test_2
+    default: ok
+    condition:
+      variable: field_4
+      operator: containsAny
+      value: [item1,item2]      
   # Operator notContainsAny
   - label: Should appear if field 4 does not contain any value item1
     type: text
@@ -139,6 +147,14 @@ inputs:
       variable: field_4
       operator: notContainsAny
       value: item1
+  - label: Should appear if field 4 does not contain any value item1, item2
+    type: text
+    name: not_contains_any_operator_test_2
+    default: ok
+    condition:
+      variable: field_4
+      operator: notContainsAny
+      value: [item1,item2]
   # Operator containsAll
   - label: Should appear if field 4 contains all values item1,item2
     type: text
