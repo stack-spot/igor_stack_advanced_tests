@@ -21,7 +21,7 @@ inputs:
     required: true
     default: "test"
   - label: Field 3
-    type: integer
+    type: int
     name: field_3
     required: true
     default: 1   
