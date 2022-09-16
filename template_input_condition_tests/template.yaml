@@ -39,6 +39,7 @@ inputs:
   - label: Should appear if field 1 is true
     type: text
     name: equals_operator_test_1
+    default: ok
     condition:
       variable: field_2
       operator: "=="
@@ -46,14 +47,24 @@ inputs:
   - label: Should appear if field 2 value is String2
     type: text
     name: equals_operator_test_2
+    default: ok
     condition:
       variable: field_2
       operator: "=="
       value: "String2"
+  - label: Should appear if field 3 value is 1
+    type: text
+    name: equals_operator_test_3
+    default: ok
+    condition:
+      variable: field_3
+      operator: "=="
+      value: 1
   # Operator !=
   - label: Should appear if field 1 is not true
     type: text
     name: not_equals_operator_test_1
+    default: ok
     condition:
       variable: field_1
       operator: "!="
@@ -65,42 +76,55 @@ inputs:
       variable: field_2
       operator: "!="
       value: "String2"
+  - label: Should appear if field 3 value is not 1
+    type: text
+    name: not_equals_operator_test_3
+    default: ok
+    condition:
+      variable: field_3
+      operator: "!="
+      value: 1
   # Operator >
   - label: Should appear if field 3 is greater than 2
     type: text
     name: greater_than_operator_test_1
+    default: ok
     condition:
-      variable: field_2
+      variable: field_3
       operator: ">"
       value: 2 
   # Operator >=
   - label: Should appear if field 3 is greater than or equal to 2
     type: text
     name: greater_than_or_equal_operator_test_1
+    default: ok
     condition:
-      variable: field_2
+      variable: field_3
       operator: ">="
       value: 2
   # Operator <
   - label: Should appear if field 3 is less than 2
     type: text
     name: less_than_operator_test_1
+    default: ok
     condition:
-      variable: field_2
+      variable: field_3
       operator: "<"
       value: 2 
   # Operator <=
   - label: Should appear if field 3 is less than or equal to 2
     type: text
     name: less_than_or_equal_operator_test_1
+    default: ok
     condition:
-      variable: field_2
+      variable: field_3
       operator: "<="
       value: 2
   # Operator containsAny
   - label: Should appear if field 4 contains any value item1
     type: text
     name: contains_any_operator_test_1
+    default: ok
     condition:
       variable: field_4
       operator: containsAny
@@ -109,6 +133,7 @@ inputs:
   - label: Should appear if field 4 does not contain any value item1
     type: text
     name: not_contains_any_operator_test_1
+    default: ok
     condition:
       variable: field_4
       operator: notContainsAny
@@ -117,6 +142,7 @@ inputs:
   - label: Should appear if field 4 contains all values item1,item2
     type: text
     name: contains_all_operator_test_1
+    default: ok
     condition:
       variable: field_4
       operator: containsAll
@@ -125,6 +151,7 @@ inputs:
   - label: Should appear if field 4 does not contain all values item1, item2
     type: text
     name: not_contains_all_operator_test_1
+    default: ok
     condition:
       variable: field_4
       operator: notContainsAll
