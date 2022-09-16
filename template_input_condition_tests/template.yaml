@@ -41,7 +41,7 @@ inputs:
     name: equals_operator_test_1
     default: ok
     condition:
-      variable: field_2
+      variable: field_1
       operator: "=="
       value: true
   - label: Should appear if field 2 value is String2
