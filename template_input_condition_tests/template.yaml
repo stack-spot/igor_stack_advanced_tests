@@ -72,6 +72,7 @@ inputs:
   - label: Should appear if field 2 value is not String2
     type: text
     name: not_equals_operator_test_2
+    default: ok
     condition:
       variable: field_2
       operator: "!="
