@@ -41,14 +41,14 @@ inputs:
     name: equals_operator_test_1
     condition:
       variable: field_2
-      operator: ==
+      operator: "=="
       value: true
   - label: Should appear if field 2 value is String2
     type: text
     name: equals_operator_test_2
     condition:
       variable: field_2
-      operator: ==
+      operator: "=="
       value: "String2"
   # Operator !=
   - label: Should appear if field 1 is not true
@@ -56,14 +56,14 @@ inputs:
     name: not_equals_operator_test_1
     condition:
       variable: field_1
-      operator: !=
+      operator: "!="
       value: true
   - label: Should appear if field 2 value is not String2
     type: text
     name: not_equals_operator_test_2
     condition:
       variable: field_2
-      operator: !=
+      operator: "!="
       value: "String2"
   # Operator >
   - label: Should appear if field 3 is greater than 2
@@ -71,7 +71,7 @@ inputs:
     name: greater_than_operator_test_1
     condition:
       variable: field_2
-      operator: >
+      operator: ">"
       value: 2 
   # Operator >=
   - label: Should appear if field 3 is greater than or equal to 2
@@ -79,7 +79,7 @@ inputs:
     name: greater_than_or_equal_operator_test_1
     condition:
       variable: field_2
-      operator: >=
+      operator: ">="
       value: 2
   # Operator <
   - label: Should appear if field 3 is less than 2
@@ -87,7 +87,7 @@ inputs:
     name: less_than_operator_test_1
     condition:
       variable: field_2
-      operator: <
+      operator: "<"
       value: 2 
   # Operator <=
   - label: Should appear if field 3 is less than or equal to 2
@@ -95,7 +95,7 @@ inputs:
     name: less_than_or_equal_operator_test_1
     condition:
       variable: field_2
-      operator: <=
+      operator: "<="
       value: 2
   # Operator containsAny
   - label: Should appear if field 4 contains any value item1
