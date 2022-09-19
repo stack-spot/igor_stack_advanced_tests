@@ -13,5 +13,5 @@ inputs:
   - label: Text field
     type: text
     name: text_field
-    pattern: "[^[A-Za-z\s]+$"
+    pattern: "[^[A-Za-z\\s]+$"
 
