@@ -1,5 +1,3 @@
-# Teste 1: confirmar que todos os campos são requisitados quando não passamos o valor
-
 name: template_input_required_tests
 description: Template used to test the required field of the inputs
 types:

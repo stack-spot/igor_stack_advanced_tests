@@ -1,6 +1,3 @@
-# Teste 1: Informar condition como false e confirmar que não precisa informar nenhum campo
-# Teste 2: Informar condition como true e confirmar que precisa informar todos os campos
-
 name: template_input_condition_tests
 description: Template used to test the condition applied for the inputs
 types:

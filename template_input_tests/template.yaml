@@ -1,13 +1,3 @@
-# Teste 1: verificar se valores inputados são salvos
-# Teste 2: valor default declarado: verificar se valores não informados assumem o valor default declarado
-# Teste 3: valor default omitido: verificar se valores não informados assumem o valor da regra de cada input, onde 
-# int = 0, bool será false e listas serão listas vazias
-# Teste 4: verificar se valor int aceita string, bool ou lista
-# Teste 5: verificar se valor bool aceita string, int ou lista
-# Teste 6: verificar se valor string aceita lista
-# Teste 7: verificar se valor lista aceita um lista que nao seja os itens da lista
-
-
 name: template_input_tests
 description: Template used to test inputs
 types:

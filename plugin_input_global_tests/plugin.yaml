@@ -1,0 +1,50 @@
+name: plugin_input_global_tests
+description: Plugin used to test global inputs
+display-name: plugin_input_global_tests
+picture: plugin.png
+category: backend # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#category
+compatibility:
+  - java
+  - spring
+about: docs/about.md
+usage: docs/usage.md
+use-case: docs/use-case.md
+implementation: docs/implementation.md
+technologies: # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#technologies
+  - "Api"
+types:
+  - app
+inputs:
+  # testing global input and global computed input in default property 
+  # Wait for issue: https://app.shortcut.com/stackspot/story/365705/p-d-interpolar-valor-default-nos-inputs 
+  - label: Input 1 (default - global_input)
+    type: text
+    name: input1
+    default: {{ global_input }}
+  - label: Input 2 (default - global_input_formatted)
+    type: text
+    name: input2
+    default: {{ global_input_formatted }}
+  # testing global input in a condition
+  # No support for that for now (negotiating new issue...)
+  - label: Input 3 
+    type: text
+    name: input3
+    condition:
+      variable: global_input
+      operator: "=="
+      value: "Global-Input-Template"
+  # testing global input overwriting
+  - label: Global input
+    type: text
+    name: global_input
+    global: true
+    default: Global-Input-Definied-By-Plugin
+# testing global input and global computed input in computed-inputs
+computed-inputs:
+  local_computed_input_1: "{{ global_input | upper }}"
+  local_computed_input_2: "{{ global_input_formatted | upper }}"     
+# testing global computed input overwriting
+global-computed-inputs:
+  global_computed_input: "Global-Input_Definied-By-Plugin"      
+

@@ -1,0 +1,22 @@
+name: template_input_global_tests
+description: Template used to test global inputs
+types:
+  - app-template
+inputs:
+  - label: Project name
+    type: text
+    name: project_name
+    default: Project Name
+  - label: Local input
+    type: text
+    name: local_input
+    default: Local-Input-Definied-By-Template
+  - label: Global input
+    type: text
+    name: global_input
+    global: true
+    default: Global-Input-Definied-By-Template
+computed-inputs:
+  local_computed_input: "{{ local_input | upper }}"
+global-computed-inputs:
+  global_computed_input: "{{ global_input | replace('-', '_') | lower}}"  
