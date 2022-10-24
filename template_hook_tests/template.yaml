@@ -1,0 +1,42 @@
+name: template_hook_tests
+description: Template used to test hooks and triggers
+types:
+  - app-template
+inputs:
+  - label: Project name
+    type: text
+    name: project_name
+    default: project-name
+  - label: Language
+    type: text
+    name: language
+    default: java
+  - label: Type
+    type: text
+    name: type
+    default: type1
+hooks:
+  - type: run
+    trigger: before-input # TODO: TRY to validate during inputs, not after
+    linux:
+      - echo "hello from run-hook-before-input on Linux!" > run-hook-before-input.txt
+    mac:
+      - echo "hello from run-hook-before-input on Mac!" > run-hook-before-input.txt
+    windows:
+      - cmd /C echo "hello from run-hook-before-input on Windows!"> run-hook-before-input.txt
+  - type: run
+    trigger: before-render
+    linux:
+      - echo "hello from run-hook-before-render on Linux!" > run-hook-before-render.txt
+    mac:
+      - echo "hello from run-hook-before-render on Mac!" > run-hook-before-render.txt
+    windows:
+      - cmd /C echo "hello from run-hook-before-render on Windows!"> run-hook-before-render.txt
+  - type: run
+    trigger: before-render
+    linux:
+      - echo "hello from run-hook-after-render on Linux!" > run-hook-after-render.txt
+    mac:
+      - echo "hello from run-hook-after-render on Mac!" > run-hook-after-render.txt
+    windows:
+      - cmd /C echo "hello from run-hook-after-render on Windows!"> run-hook-after-render.txt
