@@ -7,36 +7,54 @@ inputs:
     type: text
     name: project_name
     default: project-name
-  - label: Language
+  - label: Input1
     type: text
-    name: language
-    default: java
-  - label: Type
+    name: input1
+  - label: Input2
     type: text
-    name: type
-    default: type1
+    name: input2
 hooks:
+  ## ---------------------------------------
+  ## ---------- HOOK TYPE: RUN
+  ## ---------------------------------------
   - type: run
-    trigger: before-input # TODO: TRY to validate during inputs, not after
+    trigger: before-input # TODO: TRY to validate during inputs, not after (expect echo string before input...)
     linux:
-      - echo "hello from run-hook-before-input on Linux!" > run-hook-before-input.txt
+      - echo "hello from run-hook-before-input on Linux"
     mac:
-      - echo "hello from run-hook-before-input on Mac!" > run-hook-before-input.txt
+      - echo "hello from run-hook-before-input on Mac"
     windows:
-      - cmd /C echo "hello from run-hook-before-input on Windows!"> run-hook-before-input.txt
-  - type: run
-    trigger: before-render
-    linux:
-      - echo "hello from run-hook-before-render on Linux!" > run-hook-before-render.txt
-    mac:
-      - echo "hello from run-hook-before-render on Mac!" > run-hook-before-render.txt
-    windows:
-      - cmd /C echo "hello from run-hook-before-render on Windows!"> run-hook-before-render.txt
+      - cmd /C echo "hello from run-hook-before-input on Windows"
   - type: run
     trigger: before-render
     linux:
-      - echo "hello from run-hook-after-render on Linux!" > run-hook-after-render.txt
+      - echo "hello from run-hook-before-render on Linux"
+      - sh ../{{component_path}}/scripts/unix/assert_file_not_found.sh README.md
     mac:
-      - echo "hello from run-hook-after-render on Mac!" > run-hook-after-render.txt
-    windows:
-      - cmd /C echo "hello from run-hook-after-render on Windows!"> run-hook-after-render.txt
+      - echo "hello from run-hook-before-render on Mac"
+      - sh ../{{component_path}}/scripts/unix/assert_file_not_found.sh README.md
+    windows: # TODO
+      - cmd /C echo "hello from run-hook-before-render on Windows"
+  - type: run
+    trigger: after-render
+    linux:
+      - echo "hello from run-hook-after-render on Linux"
+      - sh ../{{component_path}}/scripts/unix/assert_file_found.sh README.md
+    mac:
+      - echo "hello from run-hook-after-render on Mac"
+      - sh ../{{component_path}}/scripts/unix/assert_file_found.sh README.md
+    windows: # TODO
+      - cmd /C echo "hello from run-hook-after-render on Windows"
+  ## ---------------------------------------
+  ## ---------- HOOK TYPE: RUN-SCRIPT
+  ## ---------------------------------------
+  - type: run-script
+    trigger: before-input
+    script: scripts/assert_inputs_empty.py
+  - type: run-script
+    trigger: before-render
+    script: scripts/assert_readme_not_found.py
+  - type: run-script
+    trigger: after-render
+    script: scripts/assert_readme_found.py
+

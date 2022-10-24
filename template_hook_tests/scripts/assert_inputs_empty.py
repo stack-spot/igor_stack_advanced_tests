@@ -11,4 +11,4 @@ def run(metadata: Metadata = None):
     target_path = metadata.target_path
     component_path = metadata.component_path
     stack_path = metadata.stack_path
-    print("Hello from script.py!")
+    assert len(inputs_local) == 0, f"inputs_local not empty: {inputs_local}"
