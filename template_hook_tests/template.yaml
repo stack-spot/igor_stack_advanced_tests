@@ -57,4 +57,35 @@ hooks:
   - type: run-script
     trigger: after-render
     script: scripts/assert_readme_found.py
-
+  ## ---------------------------------------
+  ## ---------- HOOK TYPE: EDIT
+  ## ---------------------------------------
+  - type: edit
+    trigger: after-render
+    path: src/some-file.txt
+    changes:
+      - insert:
+          line: 0
+          value: " # This is the base text "
+          when:
+            not-exists: "StringABCD"
+      - search:
+          string: "# This is the base text "        
+          insert-before:
+            snippet: snippets/before-base-text.txt
+          when:
+            not-exists: "StringABCD"
+            not-exists-snippet: snippets/before-base-text.txt
+      - search:
+          string: "# This is the base text "
+          insert-after:
+            value: "# After base text"          
+      - search:
+          pattern: (A )sample( text)
+          replace-by:
+            value: \1sample edited\2
+          when:
+            not-exists: "StringABCD"
+  ## ---------------------------------------
+  ## ---------- HOOK TYPE: EDIT-XML
+  ## ---------------------------------------
