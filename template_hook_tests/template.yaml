@@ -53,7 +53,7 @@ hooks:
     script: scripts/assert_inputs_empty.py
   - type: run-script
     trigger: before-render
-    script: scripts/assert_readme_found.py
+    script: scripts/assert_readme_not_found.py
   - type: run-script
     trigger: after-render
     script: scripts/assert_readme_found.py
