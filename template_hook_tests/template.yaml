@@ -29,20 +29,20 @@ hooks:
     trigger: before-render
     linux:
       - echo "hello from run-hook-before-render on Linux"
-      - sh ../{{component_path}}/scripts/unix/assert_file_not_found.sh README.md
+      - sh {{component_path}}/scripts/unix/assert_file_not_found.sh README.md
     mac:
       - echo "hello from run-hook-before-render on Mac"
-      - sh ../{{component_path}}/scripts/unix/assert_file_not_found.sh README.md
+      - sh {{component_path}}/scripts/unix/assert_file_not_found.sh README.md
     windows: # TODO
       - cmd /C echo "hello from run-hook-before-render on Windows"
   - type: run
     trigger: after-render
     linux:
       - echo "hello from run-hook-after-render on Linux"
-      - sh ../{{component_path}}/scripts/unix/assert_file_found.sh README.md
+      - sh {{component_path}}/scripts/unix/assert_file_found.sh README.md
     mac:
       - echo "hello from run-hook-after-render on Mac"
-      - sh ../{{component_path}}/scripts/unix/assert_file_found.sh README.md
+      - sh {{component_path}}/scripts/unix/assert_file_found.sh README.md
     windows: # TODO
       - cmd /C echo "hello from run-hook-after-render on Windows"
   ## ---------------------------------------
