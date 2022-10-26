@@ -18,7 +18,7 @@ hooks:
   ## ---------- HOOK TYPE: RUN
   ## ---------------------------------------
   - type: run
-    trigger: before-input # TODO: TRY to validate during inputs, not after (expect echo string before input...)
+    trigger: before-input
     linux:
       - echo "hello from run-hook-before-input on Linux"
     mac:
