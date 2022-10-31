@@ -70,7 +70,7 @@ hooks:
           when:
             not-exists: "StringABCD"
       - search:
-          string: "# This is the base text "        
+          string: "# This is the base text "
           insert-before:
             snippet: snippets/before-base-text.txt
           when:
@@ -79,13 +79,31 @@ hooks:
       - search:
           string: "# This is the base text "
           insert-after:
-            value: "# After base text"          
+            value: "# After base text"
       - search:
           pattern: (A )sample( text)
           replace-by:
             value: \1sample edited\2
           when:
             not-exists: "StringABCD"
-  ## ---------------------------------------
-  ## ---------- HOOK TYPE: EDIT-XML
-  ## ---------------------------------------
+  # ---------------------------------------
+  # ---------- HOOK TYPE: EDIT-XML
+  # ---------------------------------------
+  - type: edit-xml
+    trigger: after-render
+    path: pom-sample.xml
+    encoding: UTF-8
+    indent: "\t"
+    changes:
+      - xpath: .//dependencies
+        append:
+          value: |
+            <dependency>  
+              <groupId>junit</groupId>  
+              <artifactId>junit</artifactId>  
+              <version>4.8.2</version>  
+              <scope>test</scope>
+              <{{input1}}>{{input2}}</{{input1}}>
+            </dependency>
+        prepend:
+          value: <{{input1}}>{{input2}}</{{input1}}>
