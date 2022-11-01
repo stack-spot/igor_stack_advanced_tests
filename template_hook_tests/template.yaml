@@ -100,12 +100,34 @@ hooks:
       - xpath: .//dependencies
         append:
           value: |
-            <dependency>  
-              <groupId>junit</groupId>  
-              <artifactId>junit</artifactId>  
-              <version>4.8.2</version>  
+            <dependency>
+              <groupId>junit</groupId>
+              <artifactId>junit</artifactId>
+              <version>4.8.2</version>
               <scope>test</scope>
               <{{input1}}>{{input2}}</{{input1}}>
             </dependency>
         prepend:
           value: <{{input1}}>{{input2}}</{{input1}}>
+  # ---------------------------------------
+  # ---------- HOOK TYPE: EDIT-JSON
+  # ---------------------------------------
+  - type: edit-json
+    trigger: after-render
+    path: json-sample.json
+    indent: "\t"
+    encoding: utf-8
+    changes:
+      - jsonpath: "$.menu.node-test1"
+        update:
+          value: |
+            {
+             "input1": "{{input1}}",
+             "input2": "{{input2}}"
+            }
+      - jsonpath: "$.menu"
+        remove:
+          - name: node-test2-to-be-removed
+          - name: attr-test-2-to-be-removed
+      - jsonpath: "$.menu.node-test3-to-be-cleared"
+        clear: true
