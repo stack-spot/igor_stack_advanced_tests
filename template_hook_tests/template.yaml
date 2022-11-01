@@ -33,8 +33,9 @@ hooks:
     mac:
       - echo "hello from run-hook-before-render on Mac"
       - sh {{component_path}}/scripts/unix/assert_file_not_found.sh README.md
-    windows: # TODO
+    windows:
       - cmd /C echo "hello from run-hook-before-render on Windows"
+      - cmd /C "{{component_path}}\scripts\windows\assert_file_not_found.bat" README.md
   - type: run
     trigger: after-render
     linux:
@@ -43,8 +44,9 @@ hooks:
     mac:
       - echo "hello from run-hook-after-render on Mac"
       - sh {{component_path}}/scripts/unix/assert_file_found.sh README.md
-    windows: # TODO
+    windows:
       - cmd /C echo "hello from run-hook-after-render on Windows"
+      - cmd /C "{{component_path}}\scripts\windows\assert_file_found.bat" README.md
   ## ---------------------------------------
   ## ---------- HOOK TYPE: RUN-SCRIPT
   ## ---------------------------------------
