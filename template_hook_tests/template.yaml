@@ -137,7 +137,7 @@ hooks:
   - type: edit-yaml
     trigger: after-render
     path: yaml-sample.yaml
-    indent: "\t"
+    indent: 4
     encoding: utf-8
     changes:
       - yamlpath: "$.menu.node-test1"
