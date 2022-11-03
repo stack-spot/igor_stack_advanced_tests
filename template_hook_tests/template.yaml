@@ -35,7 +35,7 @@ hooks:
       - sh {{component_path}}/scripts/unix/assert_file_not_found.sh README.md
     windows:
       - cmd /C echo "hello from run-hook-before-render on Windows"
-      - cmd /C "{{component_path}}\scripts\windows\assert_file_found.bat" README.md
+      - cmd /C "{{component_path}}\scripts\windows\assert_file_not_found.bat" README.md
   - type: run
     trigger: after-render
     linux:
