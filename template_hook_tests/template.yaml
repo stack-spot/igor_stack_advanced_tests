@@ -131,3 +131,25 @@ hooks:
           - name: attr-test-2-to-be-removed
       - jsonpath: "$.menu.node-test3-to-be-cleared"
         clear: true
+  # ---------------------------------------
+  # ---------- HOOK TYPE: EDIT-YAML
+  # ---------------------------------------
+  - type: edit-yaml
+    trigger: after-render
+    path: yaml-sample.yaml
+    indent: "\t"
+    encoding: utf-8
+    changes:
+      - jsonpath: "$.menu.node-test1"
+        update:
+          value: |
+            {
+             "input1": "{{input1}}",
+             "input2": "{{input2}}"
+            }
+      - jsonpath: "$.menu"
+        remove:
+          - name: node-test2-to-be-removed
+          - name: attr-test-2-to-be-removed
+      - jsonpath: "$.menu.node-test3-to-be-cleared"
+        clear: true  
