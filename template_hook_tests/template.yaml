@@ -143,10 +143,8 @@ hooks:
       - yamlpath: "$.menu.node-test1"
         update:
           value: |
-            {
-             "input1": "{{input1}}",
-             "input2": "{{input2}}"
-            }
+            input1: {{input1}}
+            input2: {{input2}}
       - yamlpath: "$.menu"
         remove:
           - name: node-test2-to-be-removed
