@@ -140,16 +140,16 @@ hooks:
     indent: "\t"
     encoding: utf-8
     changes:
-      - jsonpath: "$.menu.node-test1"
+      - yaml-path: "$.menu.node-test1"
         update:
           value: |
             {
              "input1": "{{input1}}",
              "input2": "{{input2}}"
             }
-      - jsonpath: "$.menu"
+      - yaml-path: "$.menu"
         remove:
           - name: node-test2-to-be-removed
           - name: attr-test-2-to-be-removed
-      - jsonpath: "$.menu.node-test3-to-be-cleared"
-        clear: true  
+      - yaml-path: "$.menu.node-test3-to-be-cleared"
+        clear: true
