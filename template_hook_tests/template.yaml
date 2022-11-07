@@ -111,7 +111,7 @@ hooks:
           value: <{{input1}}>{{input2}}</{{input1}}>
       - xpath: .//dependencies
         append:
-          snippet: snippets/xml-sample.txt
+          snippet: snippets/xml-content.txt
   # ---------------------------------------
   # ---------- HOOK TYPE: EDIT-JSON
   # ---------------------------------------
