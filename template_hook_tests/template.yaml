@@ -109,6 +109,9 @@ hooks:
             </dependency>
         prepend:
           value: <{{input1}}>{{input2}}</{{input1}}>
+      - xpath: .//dependencies
+        append:
+          snippet: snippets/xml-sample.txt
   # ---------------------------------------
   # ---------- HOOK TYPE: EDIT-JSON
   # ---------------------------------------
@@ -125,6 +128,9 @@ hooks:
              "input1": "{{input1}}",
              "input2": "{{input2}}"
             }
+      - jsonpath: "$.menu.node-test1"
+        update:
+          snippet: snippets/json-content.txt           
       - jsonpath: "$.menu"
         remove:
           - name: node-test2-to-be-removed
@@ -145,6 +151,9 @@ hooks:
           value: |
             input1: {{input1}}
             input2: {{input2}}
+      - yamlpath: "$.menu.node-test1"
+        update:
+          snippet: snippets/yaml-content.txt           
       - yamlpath: "$.menu"
         remove:
           - name: node-test2-to-be-removed
