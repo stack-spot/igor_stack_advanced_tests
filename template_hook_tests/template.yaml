@@ -93,7 +93,7 @@ hooks:
   # ---------------------------------------
   - type: edit-xml
     trigger: after-render
-    path: pom-sample.xml
+    path: xml-sample.xml
     encoding: UTF-8
     indent: "\t"
     changes:
