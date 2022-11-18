@@ -19,5 +19,3 @@ inputs:
     type: text
     name: example
     default: plugin2
-requirements:
-  - igor_stack_advanced_tests/plugin_sample_1
