@@ -1,0 +1,23 @@
+name: plugin_sample_2
+description: Plugin sample 2
+display-name: plugin_sample_2
+picture: plugin.png
+category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category
+compatibility:
+  - java
+  - spring
+about: docs/about.md
+usage: docs/usage.md
+use-case: docs/use-case.md
+implementation: docs/implementation.md
+technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/yaml/#technologies
+  - "Api"
+types:
+  - app
+inputs:
+  - label: Plugin 2 input sample
+    type: text
+    name: example
+    default: plugin2
+requirements:
+  - igor_stack_advanced_tests/plugin_sample_1
