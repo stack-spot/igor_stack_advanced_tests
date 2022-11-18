@@ -15,17 +15,7 @@ technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/ya
 types:
   - app
 inputs:
-  - label: Input Example
+  - label: Plugin 0 input sample
     type: text
     name: example
-    default: any text
-  - label: Example of number
-    type: int
-    name: any_number
-    default: "10"
-  - label: Example of list
-    type: multiselect
-    name: any_list
-    items:
-      - item1
-      - item2
+    default: plugin0
