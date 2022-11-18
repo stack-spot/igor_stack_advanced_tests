@@ -1,6 +1,6 @@
-name: plugin_sample_1
-description: Plugin sample 1
-display-name: plugin_sample_1
+name: plugin_sample_0
+description: Plugin sample 0
+display-name: plugin_sample_0
 picture: plugin.png
 category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category
 compatibility:
@@ -15,9 +15,17 @@ technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/ya
 types:
   - app
 inputs:
-  - label: Plugin 1 input sample
+  - label: Input Example
     type: text
     name: example
-    default: plugin1
-requirements:
-  - igor_stack_advanced_tests/plugin_sample_0
+    default: any text
+  - label: Example of number
+    type: int
+    name: any_number
+    default: "10"
+  - label: Example of list
+    type: multiselect
+    name: any_list
+    items:
+      - item1
+      - item2
