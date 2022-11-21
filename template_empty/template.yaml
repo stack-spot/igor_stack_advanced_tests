@@ -1,0 +1,9 @@
+name: template_empty
+description: Empty template
+types:
+  - app-template
+inputs:
+  - label: Project name
+    type: text
+    name: project_name
+    default: project-name

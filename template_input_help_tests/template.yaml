@@ -2,7 +2,7 @@ name: template_input_help_tests
 description: Template used to test help field of the inputs
 types:
   - app-template
-inputs: # implementar testes quando resolver essa issue: https://github.com/stack-spot/stacklifecycle-oscli/issues/728
+inputs:
   - label: Project name
     type: text
     name: project_name
