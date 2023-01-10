@@ -112,6 +112,10 @@ hooks:
       - xpath: .//dependencies
         append:
           snippet: snippets/xml-content.txt
+      - xpath: .//random-node
+        attributes:
+          - name: att-name
+            value: att-value       
   # ---------------------------------------
   # ---------- HOOK TYPE: EDIT-JSON
   # ---------------------------------------
