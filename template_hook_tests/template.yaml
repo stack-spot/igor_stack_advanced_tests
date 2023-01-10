@@ -145,7 +145,7 @@ hooks:
         update:
           value: |
             {
-             type": "my-package.2.0.0"
+             "type": "my-package.2.0.0",
             }        
   # ---------------------------------------
   # ---------- HOOK TYPE: EDIT-YAML
