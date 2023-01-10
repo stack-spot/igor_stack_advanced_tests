@@ -140,14 +140,7 @@ hooks:
           - name: node-test2-to-be-removed
           - name: attr-test-2-to-be-removed
       - jsonpath: "$.menu.node-test3-to-be-cleared"
-        clear: true
-      - jsonpath: "$.menu.node-test4[?(@.type=~'my-package.*')]"
-        update:
-          value: |
-            {
-             "type": "my-package.2.0.0",
-             "description": "my-package"
-            }        
+        clear: true      
   # ---------------------------------------
   # ---------- HOOK TYPE: EDIT-YAML
   # ---------------------------------------
