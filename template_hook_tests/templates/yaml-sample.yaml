@@ -8,6 +8,9 @@ menu:
   node-test3-to-be-cleared:
     c1: valuec1
     c2: valuec2
+  node-test4:
+    - type: my-package.1.0.0
+      description: my-package  
   attr-test-1: attr-test-1-value
   attr-test-2-to-be-removed: attr-test-2-value
   attr-test-3: attr-test-3-value
@@ -22,3 +25,4 @@ menu:
         onclick: OpenDoc()
       - value: Save
         onclick: SaveDoc()
+    

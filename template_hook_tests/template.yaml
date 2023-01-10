@@ -164,3 +164,6 @@ hooks:
           - name: attr-test-2-to-be-removed
       - yamlpath: "$.menu.node-test3-to-be-cleared"
         clear: true
+      - yamlpath: "$.node-test4[?(@.type=~'my-package.*')]"
+        update:
+          value: "type: my-package.2.0.0"
