@@ -147,7 +147,7 @@ hooks:
   - type: edit-yaml
     trigger: after-render
     path: yaml-sample.yaml
-    indent: 4
+    indent: 2
     encoding: utf-8
     changes:
       - yamlpath: "$.menu.node-test1"
@@ -164,6 +164,6 @@ hooks:
           - name: attr-test-2-to-be-removed
       - yamlpath: "$.menu.node-test3-to-be-cleared"
         clear: true
-      - yamlpath: "$.node-test4[?(@.type=~'my-package.*')]"
+      - yamlpath: "$.menu.node-test4[?(@.type=~'my-package.*')]"
         update:
           value: "type: my-package.2.0.0"
