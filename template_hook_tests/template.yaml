@@ -143,7 +143,10 @@ hooks:
         clear: true
       - jsonpath: "$.menu.node-test4[?(@.type=~'my-package.*')]"
         update:
-          value: "type: my-package.2.0.0"        
+          value: |
+            {
+             type": "my-package.2.0.0"
+            }        
   # ---------------------------------------
   # ---------- HOOK TYPE: EDIT-YAML
   # ---------------------------------------
